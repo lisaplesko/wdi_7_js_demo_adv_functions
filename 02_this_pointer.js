@@ -1,0 +1,33 @@
+
+// Global variables
+var firstName = "Peter",
+lastName = "Ally";
+
+// Global function
+function showFullName () {
+  // "this" inside this function will have the value of the window object
+  // because the showFullName () function is defined in the global scope, just like the firstName and lastName
+   console.log (this.firstName + " " + this.lastName);
+}
+
+// Global person, it's an object literal
+var person = {
+  firstName   :"Penelope",
+  lastName    :"Barrymore",
+  showFullName:function () {
+    // "this" on the line below refers to the person object, because the showFullName function will be invoked by person object.
+    console.log (this.firstName + " " + this.lastName);
+    return this.firstName + " " + this.lastName;
+  }
+}
+
+// Invoke the Global function
+// The execution "Context" is Global, or window in a browser. 
+// So the 'this' pointer is window.
+showFullName (); // Peter Ally
+
+// window is the object that all global variables and functions are defined on, hence:
+window.showFullName (); // Peter Ally
+
+// "this" inside the showFullName () method that is defined inside the person object still refers to the person object, hence:
+person.showFullName (); // Penelope Barrymore
