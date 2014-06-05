@@ -1,3 +1,11 @@
+// The callback here is an anonymous function defined when 
+// this function is called below.
+
+// Don't believe it's any more or less efficient that 
+// explicity defining the callback function.
+
+// Apply the callback to all DOM elements, nodes, that
+// have the class 'test'
 var findNodes = function (callback) {
 	var nodes = [], // stores the result
 	found; // the next node found 
@@ -9,6 +17,22 @@ var findNodes = function (callback) {
 	return nodes; 
 };
 
-findNodes(function(node){
+var msg = "Hide All DOM elements with the class 'test' with an anonymous callback";
+alert(msg);
+console.log(msg);
+
+
+// The callback is defined in-place,i.e. when the function is being using 
+// the callback is being invoked.
+findNodes(function hideNode(node){
 	node.style.display = "none";
 });
+
+
+// I prefer to name anonymous functions so that I can:
+// 1) Refer to them inside the anon funtion if needed.
+// 2) Be able to follow a stack trace in a javascript debugger.
+// findNodes(function(node){
+// 	node.style.display = "none";
+// });
+
