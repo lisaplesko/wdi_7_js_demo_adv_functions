@@ -22,12 +22,14 @@ to point to one of these javascript files.
 In the this_index.html change the script at the end of the body 
 to point to one of these javascript files.  
 
-* 01_this_object_literal.js - 'this' in an object literal.
-* 02_this_global_function.js - 'this' in a global function.
+* this_object_literal.js - 'this' in an object literal.
+* this_global_function.js - 'this' in a global function.
 * this_event_handler_broken.js - Broken button event handler.  
 * this_event_handler_fixed.js - Fixed button event handler.
 * this_inner_function_bad.js - Broken inner function.  
 * this_inner_function_fixed.js - Fixed inner function.  
+* this_reassign_method_bad.js - Changing the runtime context of a method to the global object.
+* this_reassign_method_fixed.js - Changing the runtime context of a method with the javscript _bind_ function.
 
 
 ### References 
