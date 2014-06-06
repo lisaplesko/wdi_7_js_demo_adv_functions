@@ -1,20 +1,18 @@
-// The callback here is an anonymous function defined when 
+// The callback here is an anonymous function defined when
 // this function is called below.
 
-// Don't believe it's any more or less efficient that 
+// Don't believe it's any more or less efficient that
 // explicity defining the callback function.
 
 // Apply the callback to all DOM elements, nodes, that
 // have the class 'test'
 var findNodes = function (callback) {
-	var nodes = [], // stores the result
-	found; // the next node found 
+	var nodes = []; // stores the result
 	// get all the DOM elements
 	var testElements = document.getElementsByClassName("test");
 	for(var i = 0; i < testElements.length; i++){
 			callback(testElements[i]);
-	};
-	return nodes; 
+	}
 };
 
 var msg = "Hide All DOM elements with the class 'test' with an anonymous callback";
@@ -22,7 +20,7 @@ alert(msg);
 console.log(msg);
 
 
-// The callback is defined in-place,i.e. when the function is being using 
+// The callback is defined in-place,i.e. when the function is being using
 // the callback is being invoked.
 findNodes(function hideNode(node){
 	node.style.display = "none";
@@ -35,4 +33,3 @@ findNodes(function hideNode(node){
 // findNodes(function(node){
 // 	node.style.display = "none";
 // });
-

@@ -5,18 +5,17 @@ myapp.color = "green"; // color property is a String
 
 // paint property is a Function
 myapp.paint = function (node) {
-	node.style.color = this.color; 
+	node.style.color = this.color;
 };
 
 
 // Function that will ATTEMPT to make the DOM elements
 // with a class of 'test' green. THIS WILL FAIL!!
 
-// It takes a callback function that is invoked for 
+// It takes a callback function that is invoked for
 // each DOM element of class 'test' and set it's color to green.
 var findNodes = function (callback) {
-	var nodes = [], // stores the result
-	found; // the next node found 
+	var nodes = []; // stores the result
 	// get all the DOM elements
 	var testElements = document.getElementsByClassName("test");
 	for(var i = 0; i < testElements.length; i++){
@@ -24,25 +23,23 @@ var findNodes = function (callback) {
 			// the this pointer is the global object because this
 			// findNodes function is a global object.
 			callback(testElements[i]);
-	};
-	return nodes; 
+	}
 };
 
-// Function that will make the DOM elements with a class of 'test' green. 
+// Function that will make the DOM elements with a class of 'test' green.
 
 // It uses the javascript 'call' function to change the
 // 'Context' that the callback function is invoked from.
 // Changing the Context will change the 'this' pointer used
 // inside the callback function.
 var findNodes_fixed = function (callback,callback_obj) {
-	var nodes = [], // stores the result
-	found; // the next node found 
+	var nodes = []; // stores the result
 	// get all the DOM elements
 	var testElements = document.getElementsByClassName("test");
 	for(var i = 0; i < testElements.length; i++){
 			callback.call(callback_obj, testElements[i]);
-	};
-	return nodes; 
+			// make the myapp.paint call and make sure this pointer is myapp
+	}
 };
 
 // Fails because 'this' pointer is WRONG
@@ -55,4 +52,4 @@ console.log(msg);
 
 // Succeeds because the 'this' pointer is explicity
 // set to the myapp object.
-findNodes_fixed(myapp.paint, myapp)
+findNodes_fixed(myapp.paint, myapp);
