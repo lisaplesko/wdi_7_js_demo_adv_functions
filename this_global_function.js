@@ -7,14 +7,14 @@ function showFullName () {
 
     // Hey, what is the 'this' variable pointing to?
     debugger;
-    
+
     // Yep, its the global object, always window in a browser.
 
     // Why?
     // Because the runtime Context of this function is the global
     // object/window.
 
-    // Why? 
+    // Why?
     // Because we invoked this function at RUNTIME
     // like this 'showFullName()' or like 'window.showFullName()' below.
 
@@ -32,10 +32,10 @@ var person = {
         console.log (this.firstName + " " + this.lastName);
         return this.firstName + " " + this.lastName;
     }
-}
+};
 
 // Invoke the Global function
-// The execution "Context" is Global, or window in a browser. 
+// The execution "Context" is Global, or window in a browser.
 // So the 'this' pointer is window.
 showFullName (); // Peter Ally
 

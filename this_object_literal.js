@@ -1,12 +1,12 @@
 /*
-  We use this similar to the way we use pronouns in natural 
-  languages like English and French. We write: “John is running 
+  We use this similar to the way we use pronouns in natural
+  languages like English and French. We write: “John is running
   fast because he is trying to catch the train.” Note the use of the
   pronoun “he.” We could have written this: “John is running fast
   because John is trying to catch the train.” We don’t reuse “John”
   in this manner, for if we do, our family, friends, and
-  colleagues would abandon us. Yes, they would. In a similar 
-  aesthetic manner, we use the this keyword as a shortcut, a 
+  colleagues would abandon us. Yes, they would. In a similar
+  aesthetic manner, we use the this keyword as a shortcut, a
   referent to refer to an object.
 */
 
@@ -36,12 +36,12 @@ var person = {
         console.log(person.firstName + " " + person.lastName);
         return this.firstName + " " + this.lastName;
     }
-}
+};
 
 // The Context is the object literal 'person'
-// The 'this' pointer in the fullName method is the object literal 
+// The 'this' pointer in the fullName method is the object literal
 // we defined above, 'person'.
 console.log("This person's full name is " + person.fullName());
 
-// THE CONTEXT AND THEREFORE THE 'this' POINTER ARE ALWAYS SET AT RUN TIME, 
+// THE CONTEXT AND THEREFORE THE 'this' POINTER ARE ALWAYS SET AT RUN TIME,
 // WHEN THE FUNCTION IS ACTUALLY EXECUTED OR INVOKED!!!
