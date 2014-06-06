@@ -6,19 +6,19 @@
 // And return this array.
 var findNodes = function () {
 	var nodes = [], // stores the result
-	found; // the next node found 
+	found; // the next node found
 	// get all the DOM elements
 	var testElements = document.getElementsByClassName("test");
 	for(var i = 0; i < testElements.length; i++){
 			nodes.push(testElements[i]);
 	};
-	return nodes; 
+	return nodes;
 };
 
 // Given an array of DOM elements, i.e nodes, hide them
 // by setting their display to "none"
 var hide = function (nodes) {
-	var i = 0, max = nodes.length; 
+	var i = 0, max = nodes.length;
 	for (; i < max; i += 1) {
 		nodes[i].style.display = "none";
 	};
